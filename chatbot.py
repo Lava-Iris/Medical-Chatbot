@@ -16,7 +16,6 @@ diseases = load_json("diseases.json")
 greetResponses = load_json("greet.json")
 responses = load_json("response_data.json")
 
-map = pd.read_csv("medMap.csv")
 
 def processInput(input, response_data):
     # Check if input is empty
