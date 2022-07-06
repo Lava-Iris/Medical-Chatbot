@@ -1,1 +1,18 @@
-{}
+[
+    {
+        "disease": "tension headache",
+        "symptoms": ["headache", "4 hrs to 3 days", "4 times a month", "mild to moderate", "stressed", "tiredness", "irritability", "sensitivity to light or noise", "muscle ache", "insomnia"],
+        "treatment": "It seems you have tension headache. I suggest you try to be less stressed.",
+        "doctor_specialty": "neurology",
+        "medicines": ["Acetaminophen"],
+        "tests": ["blood test"]
+    },
+    {
+        "disease": "migraine",
+        "symptoms": ["headache", "tiredness", "irritability", "sensitivity to light or noise", "muscle ache", "insomnia"],
+        "treatment": "It seems you have a migraine.",
+        "doctor_specialty": "neurology",
+        "medicines": [],
+        "tests": ["blood test", "MRI", "EEG"]
+    }
+]

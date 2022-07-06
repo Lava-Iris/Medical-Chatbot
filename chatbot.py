@@ -5,7 +5,6 @@ import unknown
 
 def load_json(file):
     with open(file) as openedFile:
-        print(f"Successfully loaded: '{file}'")
         return json.load(openedFile)
 
 #symptoms = pd.DataFrame(columns = ["Symptom", "Probing question", "Diseases"]);
@@ -15,6 +14,8 @@ def load_json(file):
 symptoms = load_json("symptoms.json")
 diseases = load_json("diseases.json")
 greetResponses = load_json("greet.json")
+responses = load_json("response_data.json")
+
 map = pd.read_csv("medMap.csv")
 
 def processInput(input, response_data):
@@ -66,27 +67,97 @@ def processInput(input, response_data):
 
 def bot():
     #greetings 0
-    greeting = "Hello! Welcome to Apollo Hospitals. How are you feeling today?"
-    def greet(input = ""):
-        returnOutput(greeting)
+    greeting_statement = "Hello! Welcome to Apollo Hospitals. How are you feeling today?"
+    ending_statement = "Can I help you in any other way?"
+    def greet():
+        returnOutput(greeting_statement)
         returnOutput(processInput(input = getInput(), response_data = greetResponses)["response"])
         diagnose(processInput(input=getInput(), response_data= symptoms))
 
     #diagnosis 1
     def diagnose(symptom):
         #make a list of diseases with that symptom
+        possible_diseases = diseases
         #make a priority list of symptoms that we need to rule out with priority bring how close it is to 50%
-        print(symptom);
+        possible_symptoms = {}
 
+        confirmed_symptoms = []
+
+        def add_symptom(symptom):
+            nonlocal possible_symptoms
+            nonlocal possible_diseases
+            if symptom["name"] in possible_symptoms:
+                possible_symptoms[symptom["name"]] = (symptom, possible_symptoms[symptom["name"]][1] + 1)
+            else:
+                possible_symptoms[symptom["name"]] = (symptom, 1)
+            possible_symptoms = {k: v for k, v in sorted(possible_symptoms.items(), reverse=True, key=lambda item: item[1][1])}
+
+        def confirm_symptom(symptom):
+            nonlocal possible_symptoms
+            nonlocal possible_diseases
+            nonlocal confirmed_symptoms
+            possible_symptoms = {}
+            new_possible_diseases = []
+            confirmed_symptoms.append(symptom)
+            for disease in possible_diseases:
+                if symptom["name"] in disease["symptoms"]:
+                    new_possible_diseases.append(disease)
+                    for new_symptom_name in disease["symptoms"]:
+                        if new_symptom_name in confirmed_symptoms:
+                            continue
+                        for symptom_data in symptoms:
+                            if symptom_data["name"] == new_symptom_name:
+                                add_symptom(symptom_data)
+
+            possible_diseases = new_possible_diseases
+        
+        def remove_symptom(symptom):
+            nonlocal possible_symptoms
+            nonlocal possible_diseases
+            nonlocal confirmed_symptoms
+            possible_symptoms = {}
+            new_possible_diseases = []
+            confirmed_symptoms.append(symptom)
+            for disease in possible_diseases:
+                if symptom["name"] not in disease["symptoms"]:
+                    new_possible_diseases.append(disease)
+                    for new_symptom_name in disease["symptoms"]:
+                        if new_symptom_name in confirmed_symptoms:
+                            continue
+                        for symptom_data in symptoms:
+                            if symptom_data["name"] == new_symptom_name:
+                                add_symptom(symptom_data)
+
+            possible_diseases = new_possible_diseases
+
+        confirm_symptom(symptom)
+
+        keys = list(possible_symptoms.keys())
+        while(len(possible_diseases) > 1 and possible_symptoms[keys[0]][1] != possible_symptoms[keys[-1]][1]):
+            next_symptom = possible_symptoms.popitem()[1][0]
+            returnOutput(next_symptom["probing question"])
+            if (processInput(getInput(), responses)["intent"] == "YES"):
+                confirm_symptom(next_symptom)
+            else:
+                remove_symptom(next_symptom)
+
+        if len(possible_diseases) < 1:
+            returnOutput("No such disease found")
+        else:
+            returnOutput(possible_diseases.pop()["treatment"])
+            ending()
     #treatment 2
 
     #ending 3
-
-
-
-    response_functions = [greet, diagnose]
+    def ending():
+        returnOutput(ending_statement)
+        if (processInput(input = getInput(), response_data = responses)["intent"] == "YES"):
+            greet()
+        else:
+            returnOutput("Thank you for using our services. Please provide us with valuable feedback at www.feedback.com")
 
     greet()
+    
 
 
 def getInput(): 

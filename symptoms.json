@@ -1,37 +1,100 @@
 [
     {
         "user_input": ["I", "have", "my", "aches", "pains", "head", "ache", "headache", "pain", "is", "splitting"],
-        "response": "headache",
+        "name": "headache",
         "required_words": [],
         "probing question": "Do you have a headache?",
-        "time": "How long have you been having the headache?"
+        "time": "How long have you been having the headache?",
+        "frequency": "How often have you been having the headache?",
+        "where": "Where does your head ache?",
+        "intensity": "What does your headache feel like?"
     },
     {
         "user_input": ["I", "have", "stomach", "ache", "pain", "in", "pain", "pains", "aches"],
-        "response": "stomach ache",
+        "name": "stomach ache",
         "required_words": ["stomach"],
         "probing question": "Do you have a stomach ache?",
-        "time": true
+        "time": "How long have you been having the stomache ache?"
+    },
+    {
+        "user_input": ["I", "have", "muscle", "ache", "pain", "in", "pain", "pains", "aches"],
+        "name": "muscle ache",
+        "required_words": ["muscle"],
+        "probing question": "Do your muscles ache?"
     },
     {
         "user_input": ["I", "nausea", "vomit", "vomitting"],
-        "response": "nausea",
+        "name": "nausea",
         "required_words": [],
         "probing question": "Do you feel like vomitting?",
-        "time": true
+        "time": "How long have you been feeling nausea?"
     },
     {
         "user_input": ["hurt", "head", "banged", "my"],
-        "response": "head injury",
+        "name": "head injury",
         "required_words": ["head"],
         "probing question": "Have you had a head injury recently?",
-        "time": true
+        "time": "When did you have the injury?"
     },
     {
         "user_input": ["taking", "drinking", "eating", "medicine", "for"],
-        "response": "on medication",
+        "name": "on medication",
         "required_words": [],
         "probing question": "Have you been taking any medication?",
-        "time": true
+        "time": "How long have you been taking medication?"
+    },
+    {
+        "user_input": ["stress", "tension", "I", "have", "been"],
+        "name": "stressed",
+        "required_words": [],
+        "probing question": "Have you been stressed lately?"
+    },
+    {
+        "user_input": ["red", "eyes", "teary", "my", "get"],
+        "name": "red and teary eyes",
+        "required_words": ["eyes"],
+        "probing question": "Do your eyes get red and teary?"
+    },
+    {
+        "user_input": ["worse", "with", "stress", "increased", "stressed", "when", "more", "painful"],
+        "name": "response to stress",
+        "required_words": [],
+        "probing question": "Does it get worse with stress?"
+    },
+    {
+        "user_input": ["worse", "with", "movement", "increased", "move", "when", "exercise", "I", "more", "painful"],
+        "name": "response to movement",
+        "required_words": [],
+        "probing question": "Does it get worse when you move?"
+    },
+    {
+        "user_input": ["worse", "increased", "stressed", "when", "I", "drink", "alcohol", "consume", "more", "painful"],
+        "name": "response to alcohol",
+        "required_words": [],
+        "probing question": "Does it get worse when you consume alcohol?"
+    },
+    {
+        "user_input": ["can't", "don't", "sleep", "trouble", "sleeping", "have", "insomnia"],
+        "name": "insomnia",
+        "required_words": [],
+        "probing question": "Do you have trouble sleeping?"
+    },
+    {
+        "user_input": ["angry", "feeling", "get", "irritable", "irritated"],
+        "name": "irritability",
+        "required_words": [],
+        "probing question": "Have you been feeling irritable?"
+    },
+    {
+        "user_input": ["tired", "lethargic", "I", "feel", "no", "energy"],
+        "name": "tired",
+        "required_words": [],
+        "probing question": "Have you been feeling more tired than usual?"
+    },
+    {
+        "user_input": ["sensitive", "to", "light", "sound"],
+        "name": "sensitivity to light or noise",
+        "required_words": [],
+        "probing question": "Have you been feeling irritable?"
     }
 ]

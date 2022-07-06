@@ -5,8 +5,8 @@
         "required_words": []
     },
     {
-        "user_input": ["not", "great", "well", "nice", "fine", "good"],
+        "user_input": ["bad", "not", "great", "well", "nice", "fine", "good"],
         "response": "What's wrong?",
-        "required_words": ["not"]
+        "required_words": []
     }
 ]

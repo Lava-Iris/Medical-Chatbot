@@ -28,7 +28,12 @@
     },
     {
         "intent": "Time",
-        "user_input": ["for", "months", "years", "month", "hour", "hours", "minutes", "minute", "second", "seconds", "year"],
-        "required_words": ["for"]
+        "user_input": ["before", "ago","for", "months", "years", "month", "hour", "hours", "minutes", "minute", "second", "seconds", "year"],
+        "required_words": []
+    },
+    {
+        "intent": "Daily",
+        "user_input": ["daily", "everyday", "continuously"],
+        "required_words": []
     }
 ]
