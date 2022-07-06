@@ -1,0 +1,12 @@
+[
+    {
+        "user_input": ["great", "well", "nice", "fine", "good"],
+        "response": "Great! How may I help you?",
+        "required_words": []
+    },
+    {
+        "user_input": ["not", "great", "well", "nice", "fine", "good"],
+        "response": "What's wrong?",
+        "required_words": ["not"]
+    }
+]

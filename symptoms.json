@@ -1,0 +1,37 @@
+[
+    {
+        "user_input": ["I", "have", "my", "aches", "pains", "head", "ache", "headache", "pain", "is", "splitting"],
+        "response": "headache",
+        "required_words": [],
+        "probing question": "Do you have a headache?",
+        "time": "How long have you been having the headache?"
+    },
+    {
+        "user_input": ["I", "have", "stomach", "ache", "pain", "in", "pain", "pains", "aches"],
+        "response": "stomach ache",
+        "required_words": ["stomach"],
+        "probing question": "Do you have a stomach ache?",
+        "time": true
+    },
+    {
+        "user_input": ["I", "nausea", "vomit", "vomitting"],
+        "response": "nausea",
+        "required_words": [],
+        "probing question": "Do you feel like vomitting?",
+        "time": true
+    },
+    {
+        "user_input": ["hurt", "head", "banged", "my"],
+        "response": "head injury",
+        "required_words": ["head"],
+        "probing question": "Have you had a head injury recently?",
+        "time": true
+    },
+    {
+        "user_input": ["taking", "drinking", "eating", "medicine", "for"],
+        "response": "on medication",
+        "required_words": [],
+        "probing question": "Have you been taking any medication?",
+        "time": true
+    }
+]

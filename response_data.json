@@ -1,0 +1,34 @@
+[
+    {
+        "intent": "Good",
+        "user_input": ["great", "well", "nice", "fine", "good"],
+        "response": "Great! How may I help you?",
+        "required_words": []
+    },
+    {        
+        "intent": "Bad",
+        "user_input": ["not", "great", "well", "nice", "fine", "good"],
+        "response": "What's wrong?",
+        "required_words": ["not"]
+    }, 
+    {        
+        "intent": "NO",
+        "user_input": ["no", "not", "really", "don't", "haven't", "I"],
+        "required_words": []
+    }, 
+    {        
+        "intent": "YES",
+        "user_input": ["yes", "sometimes", "do", "have", "I"],
+        "required_words": []
+    },
+    {        
+        "intent": "MAYBE",
+        "user_input": ["I", "don't", "know"],
+        "required_words": []
+    },
+    {
+        "intent": "Time",
+        "user_input": ["for", "months", "years", "month", "hour", "hours", "minutes", "minute", "second", "seconds", "year"],
+        "required_words": ["for"]
+    }
+]
