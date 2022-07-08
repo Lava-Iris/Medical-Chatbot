@@ -2,7 +2,7 @@
     {
         "disease": "tension headache",
         "symptoms": ["headache", "4 hrs to 3 days", "4 times a month", "mild to moderate", "stressed", "tiredness", "irritability", "sensitivity to light or noise", "muscle ache", "insomnia"],
-        "treatment": "It seems you have tension headache. I suggest you try to be less stressed.",
+        "info": "Tension headaches are common among adults and teens. They are triggered by stress. You can read more about them at tensioninfo.com",
         "doctor_specialty": "neurology",
         "medicines": ["Acetaminophen"],
         "tests": ["blood test"]
@@ -10,9 +10,25 @@
     {
         "disease": "migraine",
         "symptoms": ["headache", "tiredness", "irritability", "sensitivity to light or noise", "muscle ache", "insomnia"],
-        "treatment": "It seems you have a migraine.",
+        "info": "Migraine is a common headache. Although there isn't any cure yet, there are medicines available that can prevent them or keep it from getting worse. ",
+        "doctor_specialty": "neurology",
+        "medicines": ["pain relief drugs like aspirin and acetaminophen", "triptans", "eptinezumab"],
+        "tests": ["blood test", "MRI", "EEG"]
+    },
+    {
+        "disease": "posttraumatic headache",
+        "symptoms": ["headache", "tiredness", "irritability", "head injury"],
+        "info": "Postraumatic headaches usually start 2-3 days after a head injury. If it's been more than a couple of weeks, we suggest seeing a doctor",
         "doctor_specialty": "neurology",
         "medicines": [],
-        "tests": ["blood test", "MRI", "EEG"]
+        "tests": []
+    },
+    {
+        "disease": "rebound headache",
+        "symptoms": ["headache", "on medication", "irritability", "head injury"],
+        "info": "Rebound headaches or medication overuse headaches occur when you use a prescription or over-the-vounter pain reliever more than two or three times a week, or more than 10 days a month.",
+        "doctor_specialty": "",
+        "medicines": [],
+        "tests": []
     }
 ]

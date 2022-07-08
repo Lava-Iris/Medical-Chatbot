@@ -128,27 +128,51 @@ def bot():
                                 add_symptom(symptom_data)
 
             possible_diseases = new_possible_diseases
+        
 
         confirm_symptom(symptom)
-
         keys = list(possible_symptoms.keys())
+
         while(len(possible_diseases) > 1 and possible_symptoms[keys[0]][1] != possible_symptoms[keys[-1]][1]):
             next_symptom = possible_symptoms.popitem()[1][0]
             returnOutput(next_symptom["probing question"])
             if (processInput(getInput(), responses)["intent"] == "YES"):
                 confirm_symptom(next_symptom)
             else:
-                remove_symptom(next_symptom)
+                remove_symptom(next_symptom)   
+            keys = list(possible_symptoms.keys())
+
 
         if len(possible_diseases) < 1:
             returnOutput("No such disease found")
         else:
-            returnOutput(possible_diseases.pop()["treatment"])
-            ending()
+            final_disease = possible_diseases.pop()
+            text = "It seems you have {name}. {info}".format(name = final_disease["disease"], info = final_disease["info"])
+            if final_disease["tests"] != []:
+                text += "The following tests might be needed to confirm this diagnosis: ".join(final_disease["tests"])
+            if final_disease["medicines"] != []:
+                text += " You can take the following medicines: ".join(final_disease["medicines"])
+            if final_disease["doctor_specialty"] != "":
+                text += "You're recommended to consult a doctor specialising in {} as soon as possible. Would you like to book an appointment with a doctor?".format(final_disease["doctor_specialty"])
+                returnOutput(text)
+                if (processInput(getInput(), responses)["intent"] == "YES"):
+                    book_doctor(final_disease["doctor_specialty"])
+                else:
+                    ending()
+                
+            else:
+                returnOutput(text)
+                ending()
+
     #treatment 2
+    def book_doctor(speciality):
+        ending("Your doctor has been booked. Is there anything else you would like help with?")
+
+    def get_medicine(list):
+        print(list)
 
     #ending 3
-    def ending():
+    def ending(ending_statement = ending_statement):
         returnOutput(ending_statement)
         if (processInput(input = getInput(), response_data = responses)["intent"] == "YES"):
             greet()
