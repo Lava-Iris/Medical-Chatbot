@@ -1,15 +1,21 @@
 [
     {
-        "intent": "Good",
+        "intent": "Greet",
+        "user_input": ["hello", "hi", "meet", "you", "hey"],
+        "response": "Hello! Welcome to Apollo Hospitals. How are you feeling today?",
+        "required_words": []
+    },
+    {
+        "intent": "Greet",
         "user_input": ["great", "well", "nice", "fine", "good"],
         "response": "Great! How may I help you?",
         "required_words": []
     },
     {        
-        "intent": "Bad",
-        "user_input": ["not", "great", "well", "nice", "fine", "good"],
+        "intent": "Greet",
+        "user_input": ["bad", "not", "great", "well", "nice", "fine", "good"],
         "response": "What's wrong?",
-        "required_words": ["not"]
+        "required_words": []
     }, 
     {        
         "intent": "NO",
@@ -35,5 +41,118 @@
         "intent": "Daily",
         "user_input": ["daily", "everyday", "continuously"],
         "required_words": []
+    },
+    {
+        "intent": "symptom",
+        "user_input": ["I", "have", "my", "aches", "pains", "head", "ache", "headache", "pain", "is", "splitting"],
+        "name": "headache",
+        "required_words": [],
+        "probing question": "Do you have a headache?",
+        "time": "How long have you been having the headache?",
+        "frequency": "How often have you been having the headache?",
+        "where": "Where does your head ache?",
+        "intensity": "What does your headache feel like?"
+    },
+    {
+        "intent": "symptom",
+        "user_input": ["I", "have", "stomach", "ache", "pain", "in", "pain", "pains", "aches"],
+        "name": "stomach ache",
+        "required_words": ["stomach"],
+        "probing question": "Do you have a stomach ache?",
+        "time": "How long have you been having the stomache ache?"
+    },
+    {
+        "intent": "symptom",
+        "user_input": ["I", "have", "muscle", "ache", "pain", "in", "pain", "pains", "aches"],
+        "name": "muscle ache",
+        "required_words": ["muscle"],
+        "probing question": "Do your muscles ache?"
+    },
+    {
+        "intent": "symptom",
+        "user_input": ["I", "nausea", "vomit", "vomitting"],
+        "name": "nausea",
+        "required_words": [],
+        "probing question": "Do you feel like vomitting?",
+        "time": "How long have you been feeling nausea?"
+    },
+    {
+        "intent": "symptom",
+        "user_input": ["hurt", "head", "banged", "my"],
+        "name": "head injury",
+        "required_words": ["head"],
+        "probing question": "Have you had a head injury recently?",
+        "time": "When did you have the injury?"
+    },
+    {
+        "intent": "symptom",
+        "user_input": ["taking", "drinking", "eating", "medicine", "for"],
+        "name": "on medication",
+        "required_words": [],
+        "probing question": "Have you been taking any medication?",
+        "time": "How long have you been taking medication?"
+    },
+    {
+        "intent": "symptom",
+        "user_input": ["stress", "tension", "I", "have", "been"],
+        "name": "stressed",
+        "required_words": [],
+        "probing question": "Have you been stressed lately?"
+    },
+    {
+        "intent": "symptom",
+        "user_input": ["red", "eyes", "teary", "my", "get"],
+        "name": "red and teary eyes",
+        "required_words": ["eyes"],
+        "probing question": "Do your eyes get red and teary?"
+    },
+    {
+        "intent": "symptom",
+        "user_input": ["worse", "with", "stress", "increased", "stressed", "when", "more", "painful"],
+        "name": "response to stress",
+        "required_words": [],
+        "probing question": "Does it get worse with stress?"
+    },
+    {
+        "intent": "symptom",
+        "user_input": ["worse", "with", "movement", "increased", "move", "when", "exercise", "I", "more", "painful"],
+        "name": "response to movement",
+        "required_words": [],
+        "probing question": "Does it get worse when you move?"
+    },
+    {
+        "intent": "symptom",
+        "user_input": ["worse", "increased", "stressed", "when", "I", "drink", "alcohol", "consume", "more", "painful"],
+        "name": "response to alcohol",
+        "required_words": [],
+        "probing question": "Does it get worse when you consume alcohol?"
+    },
+    {
+        "intent": "symptom",
+        "user_input": ["can't", "don't", "sleep", "trouble", "sleeping", "have", "insomnia"],
+        "name": "insomnia",
+        "required_words": [],
+        "probing question": "Do you have trouble sleeping?"
+    },
+    {
+        "intent": "symptom",
+        "user_input": ["angry", "feeling", "get", "irritable", "irritated"],
+        "name": "irritability",
+        "required_words": [],
+        "probing question": "Have you been feeling irritable?"
+    },
+    {
+        "intent": "symptom",
+        "user_input": ["tired", "lethargic", "I", "feel", "no", "energy"],
+        "name": "tired",
+        "required_words": [],
+        "probing question": "Have you been feeling more tired than usual?"
+    },
+    {
+        "intent": "symptom",
+        "user_input": ["sensitive", "to", "light", "sound"],
+        "name": "sensitivity to light or noise",
+        "required_words": [],
+        "probing question": "Have you been feeling irritable?"
     }
 ]

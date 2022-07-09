@@ -1,5 +1,6 @@
 [
     {
+        "intent": "disease",
         "disease": "tension headache",
         "symptoms": ["headache", "4 hrs to 3 days", "4 times a month", "mild to moderate", "stressed", "tiredness", "irritability", "sensitivity to light or noise", "muscle ache", "insomnia"],
         "info": "Tension headaches are common among adults and teens. They are triggered by stress. You can read more about them at tensioninfo.com",
@@ -8,6 +9,7 @@
         "tests": ["blood test"]
     },
     {
+        "intent": "disease",
         "disease": "migraine",
         "symptoms": ["headache", "tiredness", "irritability", "sensitivity to light or noise", "muscle ache", "insomnia"],
         "info": "Migraine is a common headache. Although there isn't any cure yet, there are medicines available that can prevent them or keep it from getting worse. ",
@@ -16,6 +18,7 @@
         "tests": ["blood test", "MRI", "EEG"]
     },
     {
+        "intent": "disease",
         "disease": "posttraumatic headache",
         "symptoms": ["headache", "tiredness", "irritability", "head injury"],
         "info": "Postraumatic headaches usually start 2-3 days after a head injury. If it's been more than a couple of weeks, we suggest seeing a doctor",
@@ -24,8 +27,9 @@
         "tests": []
     },
     {
+        "intent": "disease",
         "disease": "rebound headache",
-        "symptoms": ["headache", "on medication", "irritability", "head injury"],
+        "symptoms": ["headache", "on medication", "irritability"],
         "info": "Rebound headaches or medication overuse headaches occur when you use a prescription or over-the-vounter pain reliever more than two or three times a week, or more than 10 days a month.",
         "doctor_specialty": "",
         "medicines": [],
