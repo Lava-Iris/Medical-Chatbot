@@ -22,7 +22,6 @@ def load_json(file):
 
 symptoms = load_json("symptoms.json")
 diseases = load_json("diseases.json")
-greetResponses = load_json("greet.json")
 responses = load_json("response_data.json")
 
 
@@ -136,13 +135,14 @@ doctor = False
 probe = None
 finish = False
 
+
 def get_response(inputString):
     global diagnose
     global greet 
     global ending
     global doctor
     global probe 
-    global finish 
+    global finish
     global possible_symptoms
     global possible_diseases
     global confirmed_symptoms
@@ -162,6 +162,10 @@ def get_response(inputString):
             greet = False
             diagnose = True
             confirm_symptom(response)
+        elif response["intent"] == "book":
+            greet = False
+            doctor = True
+            return "Would you like to book an appointment with neurology?"
         else:
             return unknown.unknown_string()
     if diagnose:
@@ -199,8 +203,10 @@ def get_response(inputString):
     if doctor:
         doctor = False 
         if (response["intent"] == "YES"):
+            finish = True
             return "Your doctor has been booked. Is there anything else you would like help with?"
-        finish = True
+        else:
+            ending = True
             
     if ending:
         ending = False
@@ -216,7 +222,7 @@ def get_response(inputString):
             possible_symptoms = {}
 
             confirmed_symptoms = []
-            return "Great! How Can I help?"
+            return "Great! How can I help?"
             # add options here instead of making it an open ended question. book appointment, get diagnosis, buy medicine, buy health insurance
         else:
             return "Thank you for using our services. Please provide us with valuable feedback at www.feedback.com"

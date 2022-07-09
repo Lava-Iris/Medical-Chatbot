@@ -8,7 +8,7 @@
     {
         "intent": "Greet",
         "user_input": ["great", "well", "nice", "fine", "good"],
-        "response": "Great! How may I help you?",
+        "response": "Great! Would you like to book an appointment, buy medicine or get medical insurance?",
         "required_words": []
     },
     {        
@@ -16,7 +16,12 @@
         "user_input": ["bad", "not", "great", "well", "nice", "fine", "good"],
         "response": "What's wrong?",
         "required_words": []
-    }, 
+    },
+    {        
+        "intent": "book",
+        "user_input": ["book", "appointment", "doctor", "meet"],
+        "required_words": []
+    },  
     {        
         "intent": "NO",
         "user_input": ["no", "not", "really", "don't", "haven't", "I"],
