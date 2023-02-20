@@ -1,4 +1,4 @@
-# Meical-Chatbot
+# Medical-Chatbot
 
 To run on your computer:
 1. run chatbot.py (python3 chatbot.py)
